@@ -1,0 +1,96 @@
+<div id="body-container">
+  <div id="header">
+    <div id="logo">
+      Valence
+    </div>
+    <div id="search-container">
+      <input #channelFilter value="Enter channel name..." (click)="channelFilter.value='';" (keyup.enter)="requestChannel(channelFilter.value); timeFilter.value='Any time'; gameFilter.value='Any game';" type="text" id="channel-filter">
+      <i (click)="requestChannel(channelFilter.value); timeFilter.value='Any time'; gameFilter.value='Any game';" class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="center">
+    <div id="body-layout">
+      <div *ngIf="loading" id="loading-container" [class.hide]="loading == false" class="step">
+        <i id="loading-spinner" class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+      </div>
+
+      <div id="filter-layout">
+        <div id="filters" [class.hide]="channel == ''" class="step">
+          <div id="selected-channel-container">
+            <div *ngIf="channel != ''" (click)="viewChannel();" id="selected-channel" class="channel">
+              <span class="channel-name">{{channel}}</span>
+              <img class="channel-badge" src="{{channelBadge}}">
+            </div>
+          </div>
+
+          <form id="filter-forms">
+            <div class="form-group">
+              <select #timeFilter (change)="filterOptionTime(timeFilter.value);" class="form-control" id="time-filter" required>
+                <option *ngFor="let time of timeFilters" [value]="time">{{time}}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select #gameFilter (change)="filterOptionGame(gameFilter.value);" class="form-control" id="game-filter" required>
+                <option *ngFor="let game of gameFilters" [value]="game">{{game}}</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div *ngIf="channel == ''" id="notice">
+          {{notice}}
+        </div>
+
+        <div *ngIf="channel != ''" id="pie-chart">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="explore">
+    <div (click)="viewExplore();" id="explore-divider">
+      <div class="center">
+        <div class="explore-icon">
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
+
+        <div id="explore-text">
+          Explore
+        </div>
+
+        <div class="explore-icon">
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="channels-container" [class.hide]="exploring == false" class="step">
+    <div id="channels">
+      <div *ngFor="let channel of channels" (click)="requestChannel(channel.name); timeFilter.value='Any time'; gameFilter.value='Any game';" class="channel">
+        <span class="channel-name">{{channel.name}}</span>
+        <img class="channel-badge" src="{{channel.badge}}">
+      </div>
+
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+      <div class="channel-placeholder"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+{
+  "name": "valence",
+  "version": "0.1.0",
+  "description": "Data visualization",
+  "main": "server/server.js",
+  "repository": "git@github.com:kookehs/valence.git",
+  "scripts": {
+    "browsersync": "browser-sync start --files \"public/*.*\" --proxy 127.0.0.1:3000 --reload-delay=300 --reload-debounce=500",
+    "build": "concurrently \"npm run build:by\" \"npm run build:ts\"",
+    "build:ts": "ntsc",
+    "db": "concurrently \"mongod --dbpath ./data/db/\" \"node ../admin-mongo/app.js\"",
+    "postinstall": "typings install",
+    "start": "concurrently \"mongod --dbpath ./data/db/\" \"node ../admin-mongo/app.js\" \"nodemon ./server/server.js\" \"npm run watch:ts\" \"npm run browsersync\"",
+    "watch:ts": "ntsc -w"
+  },
+  "author": "Bill Lin",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "^2.0.1",
+    "@angular/compiler": "^2.0.1",
+    "@angular/core": "^2.0.1",
+    "@angular/forms": "^0.2.0",
+    "@angular/http": "^2.0.1",
+    "@angular/platform-browser": "^2.0.1",
+    "@angular/platform-browser-dynamic": "^2.0.1",
+    "@angular/router": "^3.0.1",
+    "@angular/router-deprecated": "^2.0.0-rc.2",
+    "@angular/upgrade": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "core-js": "^2.4.1",
+    "es6-shim": "^0.35.1",
+    "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
+    "mongoose": "^4.6.3",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.0-beta.12",
+    "systemjs": "^0.19.39",
+    "zone.js": "^0.6.25"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "concurrently": "^2.2.0",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.2",
+    "watchify": "^3.7.0",
+    "ws": "^1.1.1"
+  }
+}

@@ -1,0 +1,8 @@
+*.map
+common/**/*.js
+data/db/
+node_modules/
+public/app/**/*.js
+public/typings/
+server/**/*.js
+*.log

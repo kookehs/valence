@@ -1,0 +1,241 @@
+#body-container {
+  background-color: #282C34;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 3px, #21252B 3px, #21252B 6px);
+  font-family: Consolas;
+  height: 100%;
+  min-width: 47.25em;
+  width: 100%;
+}
+#body-layout {
+  display: block;
+  width: 100%;
+}
+#channels-container {
+  display: block;
+  margin: auto;
+  top: 100vh;
+  width: 100%;
+}
+#channels {
+  display: flex;
+  flex-wrap: wrap;
+}
+#channels div {
+
+}
+#channels div:nth-child(4n + 1) {
+  background: #55ACEE;
+}
+#channels div:nth-child(4n + 2) {
+  background: #7289DA;
+}
+#channels div:nth-child(4n + 3) {
+  background: #7AA81B;
+}
+#channels div:nth-child(4n + 4) {
+  background: #4A67CF;
+}
+#channels div:nth-child(1n+1):hover {
+  color: #3197E5;
+  background-color: #FFDE79;
+  left: 0.1em;
+}
+#explore {
+  bottom: 0;
+  cursor: pointer;
+  display: block;
+  min-width: 47.25em;
+  width: 100%;
+}
+#explore-divider {
+  background: rgba(0,0,0,0.5);
+  color: #FFFAFA;
+  display: flex;
+  font-weight: 600;
+  height: 5vh;
+  text-align: center;
+  width: 100%
+}
+#explore-text {
+  width: 80%
+}
+#filter-forms {
+  display: flex;
+  padding: 1em;
+}
+#filter-layout {
+  display: block;
+  height: 85vh;
+  width: 100%;
+}
+#filters {
+  display: flex;
+  padding: 2em;
+}
+#filters .form-control {
+  color: #FFFAFA;
+  border: 0.125em solid transparent;
+  border-left: 0.3em solid #FFF458;
+  border-radius: 0.25em;
+  font-family: Consolas;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1.5em;
+  margin-right: 1.5em;
+  padding: 0.375em 0.75em;
+}
+#filters select {
+  -webkit-appearance: none;
+  background-color: #161616;
+  box-shadow: 0 0.125em 0.5em rgba(255,250,250,0.2);
+  color: #FFFAFA;
+  cursor: pointer;
+  float: left;
+}
+#header {
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  height: 10vh;
+  width: 100%;
+}
+#loading-container {
+  background: rgba(204,204,204,0.75);
+  height: 85vh;
+  position: absolute;
+  text-align: center;
+  width: 60%;
+}
+#loading-spinner {
+  color: rgba(0,0,0,0.5);
+  position: relative;
+  top: 50%;
+}
+#logo {
+  color: #FFFAFA;
+  display: block;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 10vh;
+  text-align: center;
+  width: 100%;
+}
+#notice {
+  color: #FFFAFA;
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 4em;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+#pie-chart {
+  color: #FFFAFA;
+  display: block;
+  font-weight: 600;
+  line-height: 4em;
+  height: 50vh;
+  width: 100%;
+}
+#search-container {
+  border-radius: 0.25em;
+  color: #FFFAFA;
+  font-weight: 600;
+  line-height: 10vh;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+#search-container .fa.fa-search:hover {
+  color: #3197E5;
+  cursor: pointer;
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+#search-container input {
+  background-color: transparent;
+  border-radius: 0.25em;
+  border-bottom: 2px solid #FFFAFA;
+  color: #FFFAFA;
+  cursor: text;
+  font-family: Consolas;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+#search-container input:hover + i {
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+#search-container input:focus {
+  outline: none;
+}
+#selected-channel {
+  background-color: #FFDE79;
+  color: #3197E5;
+  height: 12em;
+}
+#selected-channel:hover {
+  color: #FFFAFA;
+  background-color: #3197E5;
+  left: 0.1em;
+}
+.center {
+  display: flex;
+  margin: auto;
+  width: 60%;
+}
+.channel {
+  border-radius: 0.25em;
+  box-shadow: 0 0.125em 0.5em rgba(0,0,0,0.5);
+  color: #FFFAFA;
+  cursor: pointer;
+  flex: 1 0 auto;
+  margin: 1em;
+  min-height: 12em;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  width: 9em;
+}
+.channel-badge {
+  bottom: 0;
+  image-rendering: pixelated !important;
+  left: -5%;
+  max-height: 110%;
+  max-width: 110%;
+  position: relative;
+  right :0;
+  top: 2em;
+  width: 110%;
+}
+.channel-name {
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  top: 1em;
+}
+.channel-placeholder {
+  background: transparent !important;
+  flex: 1 0 auto;
+  height: 0 !important;
+  margin: 1em;
+  min-width: 9em;
+  position: relative;
+}
+.explore-icon {
+  width: 10%
+}
+.hide {
+  opacity: 0 !important;
+}
+.step {
+  opacity: 1;
+  transition: 0.25s ease-in-out all;
+}
